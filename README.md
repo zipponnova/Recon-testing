@@ -23,3 +23,18 @@ You can install the required packages using:
 ```bash
 go get github.com/cheggaaa/pb/v3
 go get github.com/fatih/color
+```
+
+## Features
+
+1. Clone the repository or download the tcp_scanner.go script.
+2. Navigate to the directory containing the script.
+3. Compile the script:
+```
+go build port_scanner.go
+```
+4. Run the compiled binary:
+```
+./port_scanner
+```
+5. Follow the on-screen prompts to input a single IP, multiple IPs from a file, specify a port range, and other preferences.
