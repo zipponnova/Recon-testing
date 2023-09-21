@@ -1,49 +1,25 @@
-# Recon-testing
-Arsenal of security tools to perform reconnaissance like port scanning, vulnerability scanning and OSINT 
+# TCP Scanner in Go
 
-## Port scanning
-This is a simple concurrent port scanner written in Go (Golang). It allows you to scan a range of TCP ports on a given IP address to determine if they are open or closed.
+This is a simple, concurrent TCP port scanner written in Go. The scanner allows you to scan a range of ports for multiple IP addresses. It provides features like setting a timeout for scans, retrying on failure, saving results to a log file, and displaying a progress bar during the scan.
 
-### Features
+## Features
 
-- Concurrent scanning of multiple ports using goroutines
-- Rate limiting to control the rate of connection attempts
-- Displays scan results in a table format
+- **Concurrency**: Scans ports concurrently for faster results.
+- **Timeouts**: Set custom timeouts for each scan attempt.
+- **Retries**: Retry scanning a port if it fails.
+- **Logging**: Save scan results to a log file.
+- **Progress Bar**: Visual progress bar to track scanning progress.
+- **Quiet Mode**: Option to only display IPs with open ports.
+- **Colorful Output**: Improved readability with colored output for IP addresses and open ports.
 
-### Usage
+## Prerequisites
 
-1. Clone the repository:
-`git clone https://github.com/zipponnova/Recon-testing`
+1. Go installed on your machine.
+2. Required Go packages: 
+    - `github.com/cheggaaa/pb/v3` for the progress bar.
+    - `github.com/fatih/color` for colored output.
 
-2. Navigate to the project directory:
-`cd Recon-testing`
-
-3. Build and run the application:
-```
-go run portscan.go [IP Address] [Start Port] [End Port]
-```
-
-Replace `[IP Address]`, `[Start Port]`, and `[End Port]` with the appropriate values for the target IP address and port range.
-
-4. View the scan results:
-
-The application will display the open ports along with their respective states and reasons in a table format.
-
-### Requirements
-
-- Go 1.13 or higher
-
-### Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-### License
-
-This project is licensed under the [MIT License](LICENSE).
-
-
-
-
-
-
-
+You can install the required packages using:
+```bash
+go get github.com/cheggaaa/pb/v3
+go get github.com/fatih/color
